@@ -18,7 +18,7 @@ export default function Home() {
     emailjs.send(
         '', 
         '', 
-        {'from_name': name_arg},
+        {'from_name': name_arg, 'no_count': noCount},
         '')
       .then((result) => {
         console.log(result.text);
