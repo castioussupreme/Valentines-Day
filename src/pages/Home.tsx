@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useParams } from 'react-router-dom';
+import emailjs from 'emailjs-com';
 import "../App.css";
 
 export default function Home() {
@@ -12,10 +13,24 @@ export default function Home() {
     setNoCount(noCount + 1);
   };
 
+  const email = () => {
+    // https://plainenglish.io/blog/how-to-build-a-contact-form-in-react-that-sends-emails-using-emailjs-70011d2563a3#step-1-setup-emailjs
+    emailjs.send(
+        '', 
+        '', 
+        {'from_name': name_arg},
+        '')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+    }
+
+
   const yesClick = () => {
-    const msg = name_arg + " said yes!";
-    
     setYesPressed(true);
+    email();
   };
 
   const getNoButtonText = () => {
