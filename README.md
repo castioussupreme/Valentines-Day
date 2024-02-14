@@ -7,6 +7,7 @@ Love is in the air, and so is code! 💻
 
 
 ## Description
+This repo features a custom name on the screen as well as email verification (if configured)
 
 - Head on over to codesandbox, make an account, and clone this repo
 - For email verfication get a EmailJS account and fill the variables in the app as needed
